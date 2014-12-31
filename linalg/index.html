@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `linalg` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, linalg">
+
+    <title>linalg - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'></p>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Crate <a class='mod' href=''>linalg</a><wbr></span><span class='out-of-band'><a href='stability.html'>[stability]</a> <span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-0' href='../src/linalg/lib.rs.html#1-707'>[src]</a></span></h1>
+<div class='docblock'><p>An <em>experimental</em> linear algebra library with BLAS (*) acceleration</p>
+
+<p>(*): This library is continuously tested against OpenBLAS and netlib/reference BLAS</p>
+
+<h1 id="cargo" class='section-header'><a
+                           href="#cargo">Cargo</a></h1>
+<ul>
+<li>Cargo.toml</li>
+</ul>
+<pre class='rust '>
+[<span class='ident'>dependencies</span>.<span class='ident'>linalg</span>]
+<span class='ident'>git</span> <span class='op'>=</span> <span class='string'>&quot;https://github.com/japaric/linalg.rs&quot;</span>
+
+[<span class='ident'>dependencies</span>.<span class='ident'>linalg_macros</span>]
+<span class='ident'>git</span> <span class='op'>=</span> <span class='string'>&quot;https://github.com/japaric/linalg.rs&quot;</span>
+</pre>
+
+<ul>
+<li>Crate file</li>
+</ul>
+<pre class='rust '>
+<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>linalg</span>;
+<span class='attribute'>#[<span class='ident'>phase</span>(<span class='ident'>plugin</span>)]</span>
+<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>linalg_macros</span>;
+
+<span class='kw'>use</span> <span class='ident'>linalg</span>::<span class='ident'>prelude</span>::<span class='op'>*</span>;
+</pre>
+
+<h1 id="design-goals" class='section-header'><a
+                           href="#design-goals">Design goals</a></h1>
+<ul>
+<li>Make memory allocations explicit</li>
+<li>Minimize the creation of temporaries</li>
+<li>Accelerate (BLAS/SIMD) everything</li>
+</ul>
+
+<h1 id="conventions" class='section-header'><a
+                           href="#conventions">Conventions</a></h1>
+<ul>
+<li>All operations are <a href="http://en.wikipedia.org/wiki/Big_O_notation"><code>O(1)</code></a> in time and memory
+unless otherwise noted</li>
+<li>Matrices are laid in memory using
+<a href="https://en.wikipedia.org/wiki/Row-major_order">column-major order</a></li>
+<li>Element-wise iteration over [sub]matrices is done in the fastest way possible, there&#39;s no
+guarantee of the iteration order</li>
+</ul>
+</div><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='mod' href='blas/index.html'
+                               title='linalg::blas'>blas</a></td>
+                        <td class='docblock short'><p>BLAS acceleration</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='mod' href='prelude/index.html'
+                               title='linalg::prelude'>prelude</a></td>
+                        <td class='docblock short'><p>A collection of the most used structs and traits, meant to be glob imported</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='mod' href='strided/index.html'
+                               title='linalg::strided'>strided</a></td>
+                        <td class='docblock short'><p>Strided slices</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='mod' href='traits/index.html'
+                               title='linalg::traits'>traits</a></td>
+                        <td class='docblock short'><p>Traits</p>
+</td>
+                    </tr>
+                </table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.Col.html'
+                               title='linalg::Col'>Col</a></td>
+                        <td class='docblock short'><p>Immutable view into the column of a matrix</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.ColVec.html'
+                               title='linalg::ColVec'>ColVec</a></td>
+                        <td class='docblock short'><p>An owned column vector</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.Cols.html'
+                               title='linalg::Cols'>Cols</a></td>
+                        <td class='docblock short'><p>Iterator over the columns of an immutable matrix</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.Diag.html'
+                               title='linalg::Diag'>Diag</a></td>
+                        <td class='docblock short'><p>Immutable view into the diagonal of a matrix</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.Items.html'
+                               title='linalg::Items'>Items</a></td>
+                        <td class='docblock short'><p>Immutable sub-matrix iterator</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.Mat.html'
+                               title='linalg::Mat'>Mat</a></td>
+                        <td class='docblock short'><p>Owned matrix</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.MutCol.html'
+                               title='linalg::MutCol'>MutCol</a></td>
+                        <td class='docblock short'><p>Mutable view into the column of a matrix</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.MutCols.html'
+                               title='linalg::MutCols'>MutCols</a></td>
+                        <td class='docblock short'><p>Iterator over the columns of a mutable matrix</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.MutDiag.html'
+                               title='linalg::MutDiag'>MutDiag</a></td>
+                        <td class='docblock short'><p>Immutable view into the diagonal of a matrix</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.MutItems.html'
+                               title='linalg::MutItems'>MutItems</a></td>
+                        <td class='docblock short'><p>Mutable sub-matrix iterator</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.MutRow.html'
+                               title='linalg::MutRow'>MutRow</a></td>
+                        <td class='docblock short'><p>Mutable view into the row of a matrix</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.MutRows.html'
+                               title='linalg::MutRows'>MutRows</a></td>
+                        <td class='docblock short'><p>Iterator over the rows of a mutable matrix</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.MutView.html'
+                               title='linalg::MutView'>MutView</a></td>
+                        <td class='docblock short'><p>Mutable sub-matrix view</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.Row.html'
+                               title='linalg::Row'>Row</a></td>
+                        <td class='docblock short'><p>Immutable view into the row of a matrix</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.RowVec.html'
+                               title='linalg::RowVec'>RowVec</a></td>
+                        <td class='docblock short'><p>An owned row vector</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.Rows.html'
+                               title='linalg::Rows'>Rows</a></td>
+                        <td class='docblock short'><p>Iterator over the rows of an immutable matrix</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.Scaled.html'
+                               title='linalg::Scaled'>Scaled</a></td>
+                        <td class='docblock short'><p>A lazily scaled matrix</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.Trans.html'
+                               title='linalg::Trans'>Trans</a></td>
+                        <td class='docblock short'><p>View into the transpose of a matrix</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.View.html'
+                               title='linalg::View'>View</a></td>
+                        <td class='docblock short'><p>Immutable sub-matrix view</p>
+</td>
+                    </tr>
+                </table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='enum' href='enum.Error.html'
+                               title='linalg::Error'>Error</a></td>
+                        <td class='docblock short'><p>Errors</p>
+</td>
+                    </tr>
+                </table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='type' href='type.Result.html'
+                               title='linalg::Result'>Result</a></td>
+                        <td class='docblock short'><p>The result of a matrix operation</p>
+</td>
+                    </tr>
+                </table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "linalg";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>

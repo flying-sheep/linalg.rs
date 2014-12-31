@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `MatrixCols` trait in crate `linalg`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, MatrixCols">
+
+    <title>linalg::traits::MatrixCols - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='../index.html'>linalg</a>::<wbr><a href='index.html'>traits</a></p><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.AddAssign.html'>AddAssign</a><a class='trait ' href='trait.At.html'>At</a><a class='trait ' href='trait.AtMut.html'>AtMut</a><a class='trait ' href='trait.Iter.html'>Iter</a><a class='trait ' href='trait.IterMut.html'>IterMut</a><a class='trait ' href='trait.Matrix.html'>Matrix</a><a class='trait ' href='trait.MatrixCol.html'>MatrixCol</a><a class='trait ' href='trait.MatrixColMut.html'>MatrixColMut</a><a class='trait current' href='trait.MatrixCols.html'>MatrixCols</a><a class='trait ' href='trait.MatrixDiag.html'>MatrixDiag</a><a class='trait ' href='trait.MatrixDiagMut.html'>MatrixDiagMut</a><a class='trait ' href='trait.MatrixMutCols.html'>MatrixMutCols</a><a class='trait ' href='trait.MatrixMutRows.html'>MatrixMutRows</a><a class='trait ' href='trait.MatrixRow.html'>MatrixRow</a><a class='trait ' href='trait.MatrixRowMut.html'>MatrixRowMut</a><a class='trait ' href='trait.MatrixRows.html'>MatrixRows</a><a class='trait ' href='trait.MulAssign.html'>MulAssign</a><a class='trait ' href='trait.Slice.html'>Slice</a><a class='trait ' href='trait.SliceMut.html'>SliceMut</a><a class='trait ' href='trait.SubAssign.html'>SubAssign</a><a class='trait ' href='trait.ToOwned.html'>ToOwned</a><a class='trait ' href='trait.Transpose.html'>Transpose</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content trait">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../index.html'>linalg</a>::<wbr><a href='index.html'>traits</a>::<wbr><a class='trait' href=''>MatrixCols</a><wbr></span><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-39155' href='../../src/linalg/traits.rs.html#111-116'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait MatrixCols: <a class='trait' href='../../linalg/traits/trait.Matrix.html' title='linalg::traits::Matrix'>Matrix</a> {
+    fn <a href='#method.cols' class='fnname'>cols</a>(&amp;self) -&gt; <a class='struct' href='../../linalg/struct.Cols.html' title='linalg::Cols'>Cols</a>&lt;Self&gt; { ... }
+}</pre><div class='docblock'><p>Immutable column-by-column iteration</p>
+</div>
+            <h2 id='provided-methods'>Provided Methods</h2>
+            <div class='methods'>
+        <h3 id='method.cols' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.cols' class='fnname'>cols</a>(&amp;self) -&gt; <a class='struct' href='../../linalg/struct.Cols.html' title='linalg::Cols'>Cols</a>&lt;Self&gt;</code></h3><div class='docblock'><p>Returns an iterator that yields immutable views into the columns of the matrix</p>
+</div></div>
+        <h2 id='implementors'>Implementors</h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;T&gt; <a class='trait' href='../../linalg/traits/trait.MatrixCols.html' title='linalg::traits::MatrixCols'>MatrixCols</a> for <a class='struct' href='../../linalg/struct.Mat.html' title='linalg::Mat'>Mat</a>&lt;T&gt;</code></li>
+<li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;M&gt; <a class='trait' href='../../linalg/traits/trait.MatrixCols.html' title='linalg::traits::MatrixCols'>MatrixCols</a> for <a class='struct' href='../../linalg/struct.Trans.html' title='linalg::Trans'>Trans</a>&lt;M&gt; where M: <a class='trait' href='../../linalg/traits/trait.Matrix.html' title='linalg::traits::Matrix'>Matrix</a></code></li>
+<li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;'a, T&gt; <a class='trait' href='../../linalg/traits/trait.MatrixCols.html' title='linalg::traits::MatrixCols'>MatrixCols</a> for <a class='struct' href='../../linalg/struct.MutView.html' title='linalg::MutView'>MutView</a>&lt;'a, T&gt;</code></li>
+<li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;'a, T&gt; <a class='trait' href='../../linalg/traits/trait.MatrixCols.html' title='linalg::traits::MatrixCols'>MatrixCols</a> for <a class='struct' href='../../linalg/struct.View.html' title='linalg::View'>View</a>&lt;'a, T&gt;</code></li>
+</ul><script type="text/javascript" async
+                              src="../../implementors/linalg/traits/trait.MatrixCols.js">
+                      </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "linalg";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script async src="../../search-index.js"></script>
+</body>
+</html>

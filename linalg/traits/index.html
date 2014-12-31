@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `traits` mod in crate `linalg`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, traits">
+
+    <title>linalg::traits - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='../index.html'>linalg</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='../blas/index.html'>blas</a><a class='mod ' href='../prelude/index.html'>prelude</a><a class='mod ' href='../strided/index.html'>strided</a><a class='mod current' href='../traits/index.html'>traits</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='../struct.Col.html'>Col</a><a class='struct ' href='../struct.ColVec.html'>ColVec</a><a class='struct ' href='../struct.Cols.html'>Cols</a><a class='struct ' href='../struct.Diag.html'>Diag</a><a class='struct ' href='../struct.Items.html'>Items</a><a class='struct ' href='../struct.Mat.html'>Mat</a><a class='struct ' href='../struct.MutCol.html'>MutCol</a><a class='struct ' href='../struct.MutCols.html'>MutCols</a><a class='struct ' href='../struct.MutDiag.html'>MutDiag</a><a class='struct ' href='../struct.MutItems.html'>MutItems</a><a class='struct ' href='../struct.MutRow.html'>MutRow</a><a class='struct ' href='../struct.MutRows.html'>MutRows</a><a class='struct ' href='../struct.MutView.html'>MutView</a><a class='struct ' href='../struct.Row.html'>Row</a><a class='struct ' href='../struct.RowVec.html'>RowVec</a><a class='struct ' href='../struct.Rows.html'>Rows</a><a class='struct ' href='../struct.Scaled.html'>Scaled</a><a class='struct ' href='../struct.Trans.html'>Trans</a><a class='struct ' href='../struct.View.html'>View</a></div><div class='block enum'><h2>Enums</h2><a class='enum ' href='../enum.Error.html'>Error</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>linalg</a>::<wbr><a class='mod' href=''>traits</a><wbr></span><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-38910' href='../../src/linalg/traits.rs.html#1-260'>[src]</a></span></h1>
+<div class='docblock'><p>Traits</p>
+</div><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.AddAssign.html'
+                               title='linalg::traits::AddAssign'>AddAssign</a></td>
+                        <td class='docblock short'><p>The <code>+=</code> operator</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.At.html'
+                               title='linalg::traits::At'>At</a></td>
+                        <td class='docblock short'><p>Bounds-checked immutable indexing</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.AtMut.html'
+                               title='linalg::traits::AtMut'>AtMut</a></td>
+                        <td class='docblock short'><p>Bounds-checked mutable indexing</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.Iter.html'
+                               title='linalg::traits::Iter'>Iter</a></td>
+                        <td class='docblock short'><p>Immutable iteration over a collection</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.IterMut.html'
+                               title='linalg::traits::IterMut'>IterMut</a></td>
+                        <td class='docblock short'><p>Mutable iteration over a collection</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.Matrix.html'
+                               title='linalg::traits::Matrix'>Matrix</a></td>
+                        <td class='docblock short'><p>The basic idea of a matrix: A rectangular array arranged in rows and columns</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.MatrixCol.html'
+                               title='linalg::traits::MatrixCol'>MatrixCol</a></td>
+                        <td class='docblock short'><p>Immutable view on a column</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.MatrixColMut.html'
+                               title='linalg::traits::MatrixColMut'>MatrixColMut</a></td>
+                        <td class='docblock short'><p>Mutable access to a column</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.MatrixCols.html'
+                               title='linalg::traits::MatrixCols'>MatrixCols</a></td>
+                        <td class='docblock short'><p>Immutable column-by-column iteration</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.MatrixDiag.html'
+                               title='linalg::traits::MatrixDiag'>MatrixDiag</a></td>
+                        <td class='docblock short'><p>Immutable view on a diagonal</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.MatrixDiagMut.html'
+                               title='linalg::traits::MatrixDiagMut'>MatrixDiagMut</a></td>
+                        <td class='docblock short'><p>Mutable access to a diagonal</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.MatrixMutCols.html'
+                               title='linalg::traits::MatrixMutCols'>MatrixMutCols</a></td>
+                        <td class='docblock short'><p>Mutable column-by-column iteration</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.MatrixMutRows.html'
+                               title='linalg::traits::MatrixMutRows'>MatrixMutRows</a></td>
+                        <td class='docblock short'><p>Mutable row-by-row iteration</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.MatrixRow.html'
+                               title='linalg::traits::MatrixRow'>MatrixRow</a></td>
+                        <td class='docblock short'><p>Immutable view into a row</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.MatrixRowMut.html'
+                               title='linalg::traits::MatrixRowMut'>MatrixRowMut</a></td>
+                        <td class='docblock short'><p>Mutable access to a row</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.MatrixRows.html'
+                               title='linalg::traits::MatrixRows'>MatrixRows</a></td>
+                        <td class='docblock short'><p>Immutable row-by-row iteration</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.MulAssign.html'
+                               title='linalg::traits::MulAssign'>MulAssign</a></td>
+                        <td class='docblock short'><p>The <code>*=</code> operator</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.Slice.html'
+                               title='linalg::traits::Slice'>Slice</a></td>
+                        <td class='docblock short'><p>A more flexible slicing trait</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.SliceMut.html'
+                               title='linalg::traits::SliceMut'>SliceMut</a></td>
+                        <td class='docblock short'><p>Mutable version of the <code>Slice</code> trait</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.SubAssign.html'
+                               title='linalg::traits::SubAssign'>SubAssign</a></td>
+                        <td class='docblock short'><p>The <code>-=</code> operator</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.ToOwned.html'
+                               title='linalg::traits::ToOwned'>ToOwned</a></td>
+                        <td class='docblock short'><p>Make an owned clone from a view</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.Transpose.html'
+                               title='linalg::traits::Transpose'>Transpose</a></td>
+                        <td class='docblock short'><p>The transpose operator</p>
+</td>
+                    </tr>
+                </table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "linalg";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script async src="../../search-index.js"></script>
+</body>
+</html>
